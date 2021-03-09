@@ -26,8 +26,6 @@ def encode_resistor_colors(ohms_string):
 #     return "{} {} {} gold".format(codes[int(ohms[0])], codes[int(ohms[1])], codes[len(ohms[2:])])
 
 
-
-
 print(encode_resistor_colors("10 ohms"), "\nbrown black black gold")
 print(encode_resistor_colors("47 ohms"), "\nyellow violet black gold")
 print(encode_resistor_colors("100k ohms"), "\nbrown black yellow gold")

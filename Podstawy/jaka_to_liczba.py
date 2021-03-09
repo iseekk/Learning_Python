@@ -1,6 +1,7 @@
 import random
 
-#wartości początkowe
+
+# wartości początkowe
 LOW = 1
 HIGH = 100
 TRIES_LIMIT = 10
@@ -44,6 +45,6 @@ def main():
         print("\nPrzekroczyłeś limit prób!")
 
 
-#początek programu
+# początek programu
 display_instructions()
 main()

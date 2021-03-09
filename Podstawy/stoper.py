@@ -2,6 +2,7 @@ from time import time, strftime, localtime
 from sys import exit
 from datetime import timedelta
 
+
 RUNNING = False
 LAP = 0
 START_TIME = ""

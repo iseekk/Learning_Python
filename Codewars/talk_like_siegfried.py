@@ -1,3 +1,6 @@
+import re
+
+
 def week1(text):
     for i in range(len(text) - 1):
         if text[i].lower() == "c" and (text[i+1].lower() == "i" or text[i+1].lower() == "e"):
@@ -110,26 +113,26 @@ def siegfried(week, txt):
     return "".join(i for i in txt_list).rstrip()
 
 
-
-
-import re
-
 def dif_siegfried(week, txt):
     weeks = [
-        [['ci','si'],['ce','se'],['c(?!h)','k']],
-        [['ph','f']],
+        [['ci', 'si'], ['ce', 'se'], ['c(?!h)', 'k']],
+        [['ph', 'f']],
         [['e(?<=\w{4})(?!\w)', ''], ['([A-Za-z])(\\1)', '\1']],
         [['th', 'z'], ['wr', 'r'], ['wh?', 'v']],
         [['ou', 'u'], ['an', 'un'], ['ing(?!\w)', 'ink'], ['(?<!\w)sm', 'schm']]
     ]
-    def replacementText(x):
-        if replace == '\1': return x.group(0)[0]
-        if x.group(0)[0].isupper(): return replace.capitalize()
-        else: return replace
+
+    def replacement_text(x):
+        if replace == '\1':
+            return x.group(0)[0]
+        if x.group(0)[0].isupper():
+            return replace.capitalize()
+        else:
+            return replace
     for i in range(week):
         for [orig, replace] in weeks[i]:
-            txt = re.compile(orig, re.I).sub(replacementText, txt);
-    return txt;
+            txt = re.compile(orig, re.I).sub(replacement_text, txt)
+    return txt
 
 
 english = ''.join("""
@@ -191,6 +194,3 @@ print(siegfried(5, english))
 # print(siegfried(3, english), "\n", afterWeek3, "\n")
 # print(siegfried(4, english), "\n", afterWeek4, "\n")
 # print(siegfried(5, english), "\n", afterWeek5, "\n")
-
-
-

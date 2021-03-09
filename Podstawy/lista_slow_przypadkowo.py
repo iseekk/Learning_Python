@@ -1,8 +1,8 @@
 import random
 
-list = ["pies", "kot", "ptak", "owad", "ryba"]
+l = ["pies", "kot", "ptak", "owad", "ryba"]
 
-for i in range(len(list)):
-    word = random.choice(list)
+for i in range(len(l)):
+    word = random.choice(l)
     print(word)
-    del list[list.index(word)]
+    del l[l.index(word)]

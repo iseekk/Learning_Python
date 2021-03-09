@@ -1,17 +1,18 @@
 # Blackjack
 # Od 1 do 7 graczy współzawodniczy z rozdającym
 
-import karty, gry
+import gry
+import karty
 
 
-class BJ_Card(karty.Card):
+class BJCard(karty.Card):
     """ Karta do blackjacka. """
     ACE_VALUE = 1
 
     @property
     def value(self):
         if self.is_face_up:
-            v = BJ_Card.RANKS.index(self.rank) + 1
+            v = BJCard.RANKS.index(self.rank) + 1
             if v > 10:
                 v = 10
         else:
@@ -19,24 +20,24 @@ class BJ_Card(karty.Card):
         return v
 
 
-class BJ_Deck(karty.Deck):
+class BJDeck(karty.Deck):
     """ Talia kart do blackjacka. """
 
     def populate(self):
-        for suit in BJ_Card.SUITS:
-            for rank in BJ_Card.RANKS:
-                self.cards.append(BJ_Card(rank, suit))
+        for suit in BJCard.SUITS:
+            for rank in BJCard.RANKS:
+                self.cards.append(BJCard(rank, suit))
 
 
-class BJ_Hand(karty.Hand):
+class BJHand(karty.Hand):
     """ Ręka w blackjacku. """
 
     def __init__(self, name):
-        super(BJ_Hand, self).__init__()
+        super(BJHand, self).__init__()
         self.name = name
 
     def __str__(self):
-        rep = self.name + ":\t" + super(BJ_Hand, self).__str__()
+        rep = self.name + ":\t" + super(BJHand, self).__str__()
         if self.total:
             rep += "(" + str(self.total) + ")"
         return rep
@@ -56,7 +57,7 @@ class BJ_Hand(karty.Hand):
         # ustal, czy ręka zawiera asa
         contains_ace = False
         for card in self.cards:
-            if card.value == BJ_Card.ACE_VALUE:
+            if card.value == BJCard.ACE_VALUE:
                 contains_ace = True
 
         # jeśli ręka zawiera asa, a suma jest wystarczająco niska,
@@ -71,11 +72,11 @@ class BJ_Hand(karty.Hand):
         return self.total > 21
 
 
-class BJ_Player(BJ_Hand):
+class BJPlayer(BJHand):
     """ Gracz w blackjacku. """
 
     def __init__(self, name):
-        BJ_Hand.__init__(self, name)
+        BJHand.__init__(self, name)
         self.money = 100
 
     def is_hitting(self):
@@ -100,7 +101,7 @@ class BJ_Player(BJ_Hand):
             gry.ask_number("\n{}, ile chcesz obstawić? Twój budżet: {}".format(self.name, self.money), 1, self.money))
 
 
-class BJ_Dealer(BJ_Hand):
+class BJDealer(BJHand):
     """ Rozdający w blackjacku. """
 
     def is_hitting(self):
@@ -114,7 +115,7 @@ class BJ_Dealer(BJ_Hand):
         first_card.flip()
 
 
-class BJ_Game(object):
+class BJGame(object):
     """ Gra w blackjacka. """
 
     def __init__(self, names):
@@ -122,12 +123,12 @@ class BJ_Game(object):
         self.player_bet = 0
         self.bank = 0
         for name in names:
-            player = BJ_Player(name)
+            player = BJPlayer(name)
             self.players.append(player)
 
-        self.dealer = BJ_Dealer("Rozdający")
+        self.dealer = BJDealer("Rozdający")
 
-        self.deck = BJ_Deck()
+        self.deck = BJDeck()
         self.deck.populate()
         self.deck.shuffle()
 
@@ -216,7 +217,7 @@ def main():
         names.append(name)
     print()
 
-    game = BJ_Game(names)
+    game = BJGame(names)
 
     again = None
     while again != "n":

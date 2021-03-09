@@ -4,7 +4,10 @@
 # py.exe multiclipboard.pyw <keyword> - Loads keyword to clipboard.
 # py.exe multiclipboard.pyw list - Loads all keywords to clipboard.
 
-import pyperclip, shelve, sys
+import pyperclip
+import shelve
+import sys
+
 
 with shelve.open("mcb") as mcb_shelf:
     if len(sys.argv) == 3:

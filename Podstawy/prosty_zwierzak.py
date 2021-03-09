@@ -1,4 +1,5 @@
-class Critter(object):
+class Critter:
+
     def __init__(self, name, hunger=0, boredom=0):
         self.name = name
         self.hunger = hunger

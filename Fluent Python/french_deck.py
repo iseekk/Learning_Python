@@ -9,7 +9,7 @@ class Deck:
 
     def __init__(self):
         self._cards = [Card(rank, suit) for rank in self.ranks
-                                       for suit in self.suits]
+                       for suit in self.suits]
 
     def __len__(self):
         return len(self._cards)
@@ -22,9 +22,11 @@ deck = Deck()
 
 suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
 
+
 def spades_high(card):
     rank_value = Deck.ranks.index(card.rank)
     return rank_value * len(suit_values) + suit_values[card.suit]
+
 
 for c in sorted(deck, key=spades_high):
     print(c)

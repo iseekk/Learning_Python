@@ -1,4 +1,5 @@
-import sys, pickle
+import sys
+import pickle
 
 
 def open_file(file_name, mode):

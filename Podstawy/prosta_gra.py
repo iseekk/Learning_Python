@@ -1,4 +1,6 @@
-import gry, random
+import gry
+import random
+
 
 again = None
 while again != 'n':

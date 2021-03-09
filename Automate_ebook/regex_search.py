@@ -1,6 +1,7 @@
 import glob
 import re
 
+
 user_regex = re.compile(input("Enter regex: "))
 file_names = glob.glob("*.txt")
 rep = []

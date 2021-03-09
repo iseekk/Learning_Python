@@ -17,6 +17,5 @@ def letter_counter(s):
     return dict(sorted(dict(c).items()))
 
 
-
 print(letter_count("codewars"))
 print(letter_counter("codewars"))

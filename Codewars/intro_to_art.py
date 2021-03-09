@@ -1,3 +1,6 @@
+from time import time
+
+
 def get_w1(height):
     if height < 2: return []
     outcome = [""] * height
@@ -31,7 +34,6 @@ def get_w(height):
     return [a + b[1:] + a[1:] + b[1:] for a, b in zip(lines, reversed(lines))]
 
 
-from time import time
 s = time()
 for i in range(10000):
     get_w1(10)

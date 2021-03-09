@@ -33,7 +33,7 @@ class WarPlayer(WarHand):
         print(self.name, 'wygrał!')
 
 
-class WarGame(object):
+class WarGame:
     def __init__(self, names):
         self.players = []
         self.round = {}

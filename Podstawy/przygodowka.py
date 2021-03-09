@@ -1,4 +1,5 @@
 class Creature:
+
     def __init__(self, name, health_points=100, attack=10):
         self.name = name
         self.health_points = health_points
@@ -120,7 +121,6 @@ def main():
     input("Budzisz się w starym magazynie. Pod ścianą widzisz skrzynię. Naciśnij dowolny przycisk, aby do niej podejść"
           "i ją przeszukać.")
     storage.search()
-
 
     sewers = Sewers()
 

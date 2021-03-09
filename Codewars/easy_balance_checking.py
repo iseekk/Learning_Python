@@ -13,7 +13,8 @@ def balance(book):
                                                         cur_balance - float(line[2]))  # Balance left
         cur_balance -= float(line[2])
     expense = org_balance - cur_balance
-    rep += "Total expense  {:.2f}\r\nAverage expense  {:.2f}".format(expense, expense / len(shopping_list))
+    rep += "Total expense  {:.2f}\r\nAverage expense  {:.2f}".format(expense,
+                                                                     expense / len(shopping_list))
     return rep
 
 

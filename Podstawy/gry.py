@@ -37,5 +37,3 @@ def ask_number(question, low, high):
 if __name__ == "__main__":
     print("Uruchomiłeś ten moduł bezpośrednio (zamiast go zaimportować).")
     input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
-
-

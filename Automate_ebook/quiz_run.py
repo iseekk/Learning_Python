@@ -1,6 +1,7 @@
 import random
 import json
 
+
 SCORE = 0
 REMATCH = True
 
@@ -44,6 +45,7 @@ while REMATCH:
         again = input('\nCzy chcesz zagrać ponownie? (t/n):').lower()
     if again == 'n':
         REMATCH = False
+
 
 print(f"Wynik końcowy: {SCORE}")
 input("Koniec programu. Wciśnij Enter aby zakończyć.")

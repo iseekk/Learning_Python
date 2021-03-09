@@ -39,18 +39,15 @@ if __name__ == '__main__':
     print(mix("ala ma kota, a kot ma alę", "szafa tańczy o północy"))
 
 
-
-
-
-    # import time
-    #
-    # start = time.time()
-    # for i in range(50000):
-    #     mix("Are they here", "yes, they are here")
-    # end = time.time()
-    # print("isek:", end-start)
-    # start = time.time()
-    # for i in range(50000):
-    #     mix1("Are they here", "yes, they are here")
-    # end = time.time()
-    # print("Zosiek:", end-start)
+# import time
+#
+# start = time.time()
+# for i in range(50000):
+#     mix("Are they here", "yes, they are here")
+# end = time.time()
+# print("isek:", end-start)
+# start = time.time()
+# for i in range(50000):
+#     mix1("Are they here", "yes, they are here")
+# end = time.time()
+# print("Zosiek:", end-start)
